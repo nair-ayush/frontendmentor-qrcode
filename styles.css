@@ -6,42 +6,56 @@
   --text-secondary: hsl(220, 15%, 55%);
 }
 
-html,
-body {
-  margin: 0;
+*,
+*::after,
+*::before {
   box-sizing: border-box;
-  font-family: "Outfit", sans-serif;
-  height: 100vh;
-  display: flex;
+}
+
+* {
+  margin: 0;
+  font: inherit;
+}
+
+img,
+svg {
+  min-width: 100%;
+  display: block;
+}
+
+body {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
   background-color: var(--bg-primary);
-  justify-content: center;
-  align-items: center;
+  font-size: 16px;
+  color: var(--text-primary);
+  font-family: "Outfit", sans-serif;
 }
 
 .card {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  font-size: 15px;
+  --border-radius: 1rem;
+  --padding: 1rem;
+  border-radius: var(--border-radius);
   background-color: var(--bg-secondary);
-  border-radius: 5%;
-  padding: 1rem;
-  max-width: 240px;
-  font-weight: 400;
+  padding: var(--padding);
+  display: grid;
+  max-width: 17rem;
+  gap: var(--padding);
+  text-align: center;
 }
 
-.card .img {
-  border-radius: 5%;
+.card img {
+  height: 14rem;
+  aspect-ratio: 1 /1;
+  border-radius: var(--border-radius);
 }
 
-.card .heading {
+.card h3 {
   color: var(--text-primary);
-  text-align: center;
-  font-weight: 700;
-  margin: 0;
+  font-weight: bold;
 }
-.card .text {
+.card p {
   color: var(--text-secondary);
-  text-align: center;
-  margin-bottom: 1rem;
+  padding-bottom: var(--padding);
 }
